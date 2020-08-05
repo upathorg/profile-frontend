@@ -3,11 +3,7 @@
 To start clone the repository and install the dependencies using the commands below.
 
 ```
-git clone master nameOfYourProject
-```
-
-```
-cd nameOfYourProject
+git clone 
 ```
 
 ```
@@ -46,12 +42,3 @@ npm run start
 ```
 
 Ready!! if everything went well, just check your application in the browser http://127.0.0.1:3000/.
-
-## &#10003; Libraries
-
-<p>📍 <a href="https://material-ui.com/"> Material UI </a></p>
-<p>📍 <a href="https://getbootstrap.com/"> Reactstrap </a></p>
-<p>📍 <a href="https://react-icons.netlify.com/#/"> React Icons </a></p>
-<p>📍 <a href="https://www.npmjs.com/package/react-router-dom"> React Router Dom </a></p>
-<p>📍 <a href="https://redux.js.org/"> Redux </a></p>
-<p>📍 <a href="https://material-ui.com/"> Styled Components </a></p>
