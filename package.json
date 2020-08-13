@@ -1,30 +1,24 @@
 {
-  "name": "dashmin",
-  "version": "1.3.0",
-  "description": "Minimal Dashboard in ReactJs Hooks + Redux + Styled Components + MaterialUI + React Icons and Reactstrap.",
-  "homepage": "https://hiukky.github.io/dashmin-react",
-  "repository": "https://github.com/hiukky/dashmin-react.git",
-  "author": "R o m u l l o",
-  "license": "MIT",
+  "name": "frontend",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.9.8",
-    "bootstrap": "^4.4.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-icons": "^3.9.0",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "reactstrap": "^8.4.1",
-    "redux": "^4.0.5",
-    "styled-components": "^5.0.1"
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.14",
+    "@types/react": "16.9.13",
+    "@types/react-dom": "16.9.4",
+    "apollo-boost": "^0.4.4",
+    "graphql": "^14.5.8",
+    "react": "^16.12.0",
+    "react-apollo": "^3.1.3",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.4.3",
+    "typescript": "3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,5 +35,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
