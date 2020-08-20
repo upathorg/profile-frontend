@@ -1,4 +1,4 @@
-## &#10003; Instalation
+## &#10003; Installation
 
 To start clone the repository and install the dependencies using the commands below.
 
