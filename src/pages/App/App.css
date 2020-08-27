@@ -1,0 +1,33 @@
+body {
+  font-family: "Muli", sans-serif;
+}
+
+.bg-blue {
+  background: #3198f7;
+}
+
+.bg-left {
+  background: #edf7fd
+}
+
+.bg-linkedin {
+  background: #2877b5;
+  color: #fff;
+}
+
+.bg-google {
+  background: #fff;
+  color: gray;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 1.1);
+}
+
+.bg-facebook {
+  background: #1977f3;
+  color: #fff;
+}
+
+.form-border {
+  color: #3499f7;
+}
+
+/* 3499f7 */
