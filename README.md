@@ -1,5 +1,19 @@
-# gello-world
+## Installation and Setup Instructions
+Example:
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-## The branches of this project are sorted in the order they were coded.
+Installation:
 
-[Click me for the YouTube playlist associated with this repo](https://www.youtube.com/playlist?list=PLN3n1USn4xlm_kQ2F-vuucMF1Mp0ti-hy)
+npm install
+
+To Run Test Suite:
+
+npm test
+
+To Start Server:
+
+npm start
+
+To Visit App:
+
+localhost:3000
