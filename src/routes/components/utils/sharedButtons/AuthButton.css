@@ -1,0 +1,60 @@
+.linkedin-btn {
+    display: flex;
+    min-width: 13rem;
+    background: #0077B5;
+    border-radius: 8px;
+    border-style: none;
+    padding: 0.5rem;
+    box-shadow: -2px -2px 3px rgba(234, 247, 249, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-top: 1rem;
+}
+.google-btn {
+    display: flex;
+    min-width: 13rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border-style: none;
+    padding: 0.5rem;
+    box-shadow: -2px -2px 3px rgba(234, 247, 249, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 600;
+    margin-top: 1rem;
+
+}
+.facebook-btn {
+    display: flex;
+    min-width: 13rem;
+    background: #0077B5;
+    border-radius: 8px;
+    border-style: none;
+    padding: 0.5rem;
+    box-shadow: -2px -2px 3px rgba(234, 247, 249, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-top: 1rem;
+
+}
+.linkedin-btn:hover,
+.facebook-btn:hover {
+    background: #014f79;
+}
+
+.google-btn:hover {
+    background: #d4d4d4;
+}
+.linkedin-btn span,
+.facebook-btn span,
+.google-btn span {
+    padding-left: 0.5rem;
+    min-width: 11rem;
+}

@@ -1,0 +1,85 @@
+.page-wrapper {
+    display: flex;
+}
+.image-container {
+    height: 100vh;
+    background: #EDF7FF;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.login-image {
+    width: 100%;
+    height: auto;
+}
+.form-container {
+    background: #F2F2F2;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 50vw;
+}
+.signup-paragraph{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+.form-container-box{
+    justify-content: center;
+    align-items: center;
+    padding: 8rem;
+}
+.signin-title {
+    display: flex;
+    min-width: 310px;
+}
+.signin-title-text{
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    margin-bottom: 3rem;
+}
+.logo-btn-wrapper {
+    justify-content: space-around;
+}
+.section-border {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 2rem 0;
+}
+
+.section-border-line {
+    width: 250px;
+    border: 0.5px solid #000000;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+}
+.section-border-text {
+    display: inline-block;
+}
+.form-text {
+    text-align: right;
+}
+.custom-submit-btn {
+    background:  #0099FF;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 0.5rem 6rem;
+}
+.custom-submit-btn:hover {
+    background: #0169af;
+}
