@@ -1,10 +1,10 @@
 import React from "react";
 import FacebookLogo from "../../../../assets/images/FacebookLogo.png";
-const FacebookButton = () => {
+const FacebookButton = (props) => {
   return (
     <button className="facebook-btn">
       <img src={FacebookLogo} alt="Facebook Logo" />
-      <span>continue with Facebook</span>
+      <span>{props.buttonText}</span>
     </button>
   );
 };

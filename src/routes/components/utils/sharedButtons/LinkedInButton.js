@@ -1,12 +1,12 @@
 import React from "react";
-import './AuthButton.css'
-import LinkedInLogo from '../../../../assets/images/LinkedInLogo.png'
+import "./AuthButton.css";
+import LinkedInLogo from "../../../../assets/images/LinkedInLogo.png";
 
-const LinkedInButton = () => {
+const LinkedInButton = (props) => {
   return (
     <button className="linkedin-btn">
       <img src={LinkedInLogo} alt="LinkedIn Logo" />
-      <span>continue with LinkedIn</span>
+      <span>{props.buttonText}</span>
     </button>
   );
 };

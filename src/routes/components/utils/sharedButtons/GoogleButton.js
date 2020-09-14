@@ -1,10 +1,10 @@
 import React from "react";
-import GoogleLogo from '../../../../assets/images/GoogleLogo.png'
-const GoogleButton = () => {
+import GoogleLogo from "../../../../assets/images/GoogleLogo.png";
+const GoogleButton = (props) => {
   return (
     <button className="google-btn">
       <img src={GoogleLogo} alt="Google Logo" />
-      <span>continue with Google</span>
+      <span>{props.buttonText}</span>
     </button>
   );
 };

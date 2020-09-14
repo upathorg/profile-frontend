@@ -7,6 +7,7 @@ import SideBar from "./components/SideBar";
 import Navbar from "./components/Navbar";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import SignUp from "./SignUp";
 
 export default () => (
   <div className="h-screen w-screen flex bg-gray-200">
@@ -20,6 +21,7 @@ export default () => (
             path="/register"
             render={(props) => <Register {...props} />}
           />
+          <Route exact path="/signup" render = {(props) => <SignUp {...props} />} />
           <Route exact path="/auth" render={(props) => <Auth {...props} />} />
         </Switch>
       </BrowserRouter>

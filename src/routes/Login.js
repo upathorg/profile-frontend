@@ -22,7 +22,7 @@ const Login = () => {
         <Col className="form-container">
           <div>
             <p className="signup-paragraph">
-              Have a member yet? <a href="/register">Sign up</a>
+              Not a member yet? <a href="/signup">Sign up</a>
             </p>
           </div>
           <div className="form-container-box">
@@ -32,9 +32,9 @@ const Login = () => {
               </Col>
             </Row>
             <Row className="logo-btn-wrapper">
-              <LinkedInButton />
-              <GoogleButton />
-              <FacebookButton />
+              <LinkedInButton buttonText="Continue with LinkedIn"/>
+              <GoogleButton buttonText="Continue with Google"/>
+              <FacebookButton buttonText="Continue with Facebook"/>
             </Row>
             <div className="section-border">
               <div className="section-border-line"></div>
@@ -45,6 +45,7 @@ const Login = () => {
               <Form.Group>
                 <Form.Control
                   style={styles.formControl}
+                  size="lg"
                   type="email"
                   placeholder="E-mail"
                 />
@@ -52,6 +53,7 @@ const Login = () => {
               <Form.Group>
                 <Form.Control
                   style={styles.formControl}
+                  size="lg"
                   type="password"
                   placeholder="Password"
                 />
