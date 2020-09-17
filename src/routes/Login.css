@@ -17,6 +17,7 @@
   /* flex-wrap: wrap; */
   width: 100%;
   min-width: 50vw;
+  height: 100vh;
 }
 .signup-paragraph {
   font-style: normal;
