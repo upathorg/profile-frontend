@@ -5,7 +5,6 @@ import Exercises_svg from '../../svg/exercises.js'
 
 const SideBar = () => {
   return (
-    <div className="h-screen w-screen flex bg-gray-200">
       <aside className="flex flex-col items-center bg-white text-gray-700 shadow h-full">
         <ul>
           <li className="hover:bg-gray-100">
@@ -37,7 +36,6 @@ const SideBar = () => {
           </li>
           </ul>
       </aside>
-    </div>
   )
 }
 export default SideBar;

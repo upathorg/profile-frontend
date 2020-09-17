@@ -1,0 +1,96 @@
+.page-wrapper {
+  display: flex;
+}
+.image-container {
+  height: 100vh;
+  background: #edf7ff;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.login-image {
+  width: 100%;
+  height: auto;
+}
+.form-container {
+  background: #f2f2f2;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  min-width: 50vw;
+  height: 100vh;
+}
+.signup-paragraph {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+.form-container-box {
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+}
+.signin-title {
+  display: flex;
+  min-width: 310px;
+}
+.title-text {
+  display: contents;
+  font-style: normal;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  margin-bottom: 3rem;
+}
+.subTitle-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+}
+.logo-btn-wrapper {
+  justify-content: space-around;
+}
+.section-border {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 2rem 0;
+}
+
+.section-border-line {
+  width: 250px;
+  border: 0.5px solid #000000;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+.section-border-text {
+  display: inline-block;
+}
+.form-text {
+  text-align: right;
+}
+.custom-submit-btn {
+  background: #0099ff;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.5rem 5rem;
+}
+.custom-submit-btn:hover {
+  background: #0169af;
+}
+.form-check-input {
+  border-color: red;
+}
