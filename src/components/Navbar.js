@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from '../../assets/images/sharpstudy.png'
+import logo from '../assets/images/sharpstudy.png'
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -12,7 +12,7 @@ const Navbar = () => {
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-4 whitespace-no-wrap uppercase text-gray"
               href="/dashboard"
             >
-             <img src={logo} className="pt-2 logo" alt="" />
+              <img src={logo} className="pt-2 logo" alt="" />
             </a>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"

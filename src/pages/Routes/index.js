@@ -1,17 +1,19 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
-import Auth from "./Auth";
-import Login from "./Login";
-import Register from "./Register";
-import SideBar from "./components/SideBar";
-import Navbar from "./components/Navbar";
-import "./index.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SignUp from "./SignUp";
+
+import Auth from "../Auth/Auth";
+import Login from "../Auth/Login";
+import Register from "../Auth/Register";
+import SignUp from "../Auth/SignUp";
+// import Navbar from "../../components/Navbar";
+import SideBar from "../../components/SideBar";
+import "./index.css";
 
 export default () => (
   <div className="h-screen w-screen flex bg-gray-200">
     <SideBar />
+
     <div className="content-wrapper">
       <BrowserRouter>
         <Switch>
@@ -21,7 +23,7 @@ export default () => (
             path="/register"
             render={(props) => <Register {...props} />}
           />
-          <Route exact path="/signup" render = {(props) => <SignUp {...props} />} />
+          <Route exact path="/signup" render={(props) => <SignUp {...props} />} />
           <Route exact path="/auth" render={(props) => <Auth {...props} />} />
         </Switch>
       </BrowserRouter>

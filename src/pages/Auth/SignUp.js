@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
-import signUpImage from "../assets/images/signUpDefaultImage.png";
-import LinkedInButton from "./components/utils/sharedButtons/LinkedInButton";
-import GoogleButton from "./components/utils/sharedButtons/GoogleButton";
-import FacebookButton from "./components/utils/sharedButtons/FacebookButton";
+
+import signUpImage from "../../assets/images/signUpDefaultImage.png";
+import FacebookButton from "../../components/SharedButtons/FacebookButton";
+import GoogleButton from "../../components/SharedButtons/GoogleButton";
+import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
 
 const styles = {
   formControl: {
