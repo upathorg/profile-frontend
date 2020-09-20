@@ -1,5 +1,6 @@
 import React from "react";
-import GoogleLogo from "../../../../assets/images/GoogleLogo.png";
+
+import GoogleLogo from "../../assets/images/GoogleLogo.png";
 
 const GoogleButton = (props) => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Input, Checkbox } from 'antd';
-import { gql, graphql } from 'react-apollo';
+import { gql } from '@apollo/client';
+import { graphql } from '@apollo/react-hoc';
 
 class Register extends React.Component {
   state = {

@@ -1,6 +1,7 @@
 import React from "react";
+
+import LinkedInLogo from "../../assets/images/LinkedInLogo.png";
 import "./AuthButton.css";
-import LinkedInLogo from "../../../../assets/images/LinkedInLogo.png";
 
 const LinkedInButton = (props) => {
   return (

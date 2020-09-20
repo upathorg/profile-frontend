@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloProvider } from 'react-apollo';
-import { ApolloClient, createNetworkInterface } from 'react-apollo';
-import Routes from './routes';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-const networkInterface = createNetworkInterface({
-  uri: 'http://localhost:3000/graphql',
-});
+import Routes from './pages/Routes';
+
 const client = new ApolloClient({
-  networkInterface: networkInterface
+  uri: 'http://localhost:3000/graphql',
+  cache: new InMemoryCache()
 });
 
 const App = () => (
