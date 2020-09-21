@@ -1,5 +1,6 @@
 import React from "react";
-import FacebookLogo from "../../../../assets/images/FacebookLogo.png";
+
+import FacebookLogo from "../../assets/images/FacebookLogo.png";
 
 const FacebookButton = (props) => {
   return (

@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import loginImage from "../assets/images/undraw_tutorial_video_vtd1.png";
-import LinkedInButton from "./components/utils/sharedButtons/LinkedInButton";
-import GoogleButton from "./components/utils/sharedButtons/GoogleButton";
-import FacebookButton from "./components/utils/sharedButtons/FacebookButton";
+
+import loginImage from "../../assets/images/undraw_tutorial_video_vtd1.png";
+import FacebookButton from "../../components/SharedButtons/FacebookButton";
+import GoogleButton from "../../components/SharedButtons/GoogleButton";
+import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
 import "./Login.css";
 
 const styles = {
@@ -32,9 +33,9 @@ const Login = () => {
               </Col>
             </Row>
             <Row className="logo-btn-wrapper">
-              <LinkedInButton buttonText="Continue with LinkedIn"/>
-              <GoogleButton buttonText="Continue with Google"/>
-              <FacebookButton buttonText="Continue with Facebook"/>
+              <LinkedInButton buttonText="Continue with LinkedIn" />
+              <GoogleButton buttonText="Continue with Google" />
+              <FacebookButton buttonText="Continue with Facebook" />
             </Row>
             <div className="section-border">
               <div className="section-border-line"></div>
