@@ -1,0 +1,89 @@
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.roadmap__text {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text--orange {
+  color: #f2994a;
+}
+
+.cursor--pointer {
+  cursor: pointer;
+}
+
+.dropdown__content {
+  position: absolute;
+  margin-top: -1rem;
+  min-width: 100%;
+  z-index: 10;
+}
+
+.dropdown__item {
+  transition: all 0.5s;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.dropdown__item:hover {
+  background: #eaf7f9;
+}
+
+.circle__root {
+  width: 445px;
+  height: 445px;
+}
+
+.circle__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.circle__progress {
+  font-size: 60px;
+  line-height: 32px;
+}
+
+.circle__roadmapName {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.card__root {
+  background: #56ccf2;
+  max-width: 255px;
+}
+
+.card__progress {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+@media (max-width: 576px) {
+  .roadmap__text--sm {
+    font-size: 14px;
+  }
+
+  .circle__root {
+    width: 100%;
+    height: 300px;
+  }
+
+  .circle__progress {
+    font-size: 48px;
+  }
+
+  .card__progress {
+    display: none;
+  }
+}
