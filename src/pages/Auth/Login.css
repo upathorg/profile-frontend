@@ -81,12 +81,11 @@
   font-weight: 800;
   font-size: 14px;
   line-height: 32px;
-  display: flex;
-  align-items: center;
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  padding: 0.5rem 5rem;
+  width: 13rem;
+  padding: 0.5rem 0;
 }
 .custom-submit-btn:hover {
   background: #0169af;
