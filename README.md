@@ -31,7 +31,7 @@ With the `.env` file at the root directory of your system, and with yarn install
 yarn
 ```
 
-- Once the dependencies are installed, then ensure that you have the right API link uncommented out in the env file. Look out for `REACT_APP_GRAPHQL_ENDPOINT`, and use `"http://localhost:4000"` when you have backend server running locally. Once ready, then start the frontend server
+- Once the dependencies are installed, then ensure that you have the right API link uncommented out in the env file. Look out for `LOGIN_URL_ENDPOINT="............"` and `SIGN_IN_URL_ENDPOINT="...........`, and use `"backend local URL"` when you have backend server running locally. Once ready, then start the frontend server
 
 ```
 yarn start
@@ -90,7 +90,7 @@ A running changelog can be found here: [CHANGELOG.md](CHANGELOG.md)
 ## Authors
 
 - **Harrison Ekpobimi** <harrisonekpobimi@gmail.com>
-- **Mike Qureshi** <yet to be added>
+- **Mike Qureshi** <mike@upath.com>
 
 ## Licenses
 
