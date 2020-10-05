@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from 'react';
 import { Container, Row, Col, Form } from "react-bootstrap";
-
 import loginImage from "../../assets/images/undraw_tutorial_video_vtd1.png";
 import FacebookButton from "../../components/SharedButtons/FacebookButton";
 import GoogleButton from "../../components/SharedButtons/GoogleButton";
 import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 import "./Login.css";
 
 const styles = {
@@ -13,7 +14,50 @@ const styles = {
   },
 };
 
-const Login = () => {
+const Login = props => {
+  const authContext = useContext(AuthContext);
+  const alertContext = useContext(AlertContext);
+
+  const { setAlert } = alertContext;
+
+  const { login, error, clearErrors, isAuthenticated, token } = authContext;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      localStorage.setItem("jwt", token);
+      props.history.push('/roadmap'); //will change later
+    }
+
+    if (error === 'Invalid Credentials') {
+      setAlert(error, 'danger');
+      clearErrors();
+    }
+
+  }, [error, clearErrors, isAuthenticated, setAlert, token, props.history]);
+
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+    username: ''
+  });
+
+  const { email, password, username } = user;
+
+  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    if (email === '' || password === '') {
+      setAlert('Please fill in all fields', 'danger');
+    } else {
+      login({
+        email,
+        username,
+        password
+      });
+    }
+  };
+
   return (
     <Container fluid>
       <Row className="page-wrapper">
@@ -42,13 +86,27 @@ const Login = () => {
               <div className="section-border-text">OR</div>
               <div className="section-border-line"></div>
             </div>
-            <Form>
+            <Form onSubmit={onSubmit}>
+            <Form.Group>
+                <Form.Control
+                  style={styles.formControl}
+                  size="lg"
+                  type="username"
+                  name="username"
+                  placeholder="Username"
+                  value={username}
+                  onChange={onChange}
+                />
+              </Form.Group>
               <Form.Group>
                 <Form.Control
                   style={styles.formControl}
                   size="lg"
                   type="email"
+                  name="email"
                   placeholder="E-mail"
+                  value={email}
+                  onChange={onChange}
                 />
               </Form.Group>
               <Form.Group>
@@ -56,7 +114,10 @@ const Login = () => {
                   style={styles.formControl}
                   size="lg"
                   type="password"
+                  name="password"
                   placeholder="Password"
+                  value={password}
+                  onChange={onChange}
                 />
                 <Form.Text className="form-forgot-password">
                   <a href="/">Forgot password?</a>
