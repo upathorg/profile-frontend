@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 // import { createStore, applyMiddleware } from 'redux'; we will re-introduce later
 
 import Routes from './pages/Routes';
+import { Provider} from 'react-redux';
+import store from './store';
 
 // const client = new ApolloClient({
 //   uri: 'http://localhost:3000/graphql', we will re-introduce later
@@ -11,11 +13,11 @@ import Routes from './pages/Routes';
 // });
 
 const App = () => (
-  // <ApolloProvider client={client} store={store}> we will re-introduce later
+   <Provider store={store}>
     <React.Fragment>
       <Routes />
     </React.Fragment>
-  //</ApolloProvider> we will re-introduce later
+  </Provider>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

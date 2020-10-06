@@ -4,8 +4,8 @@ import loginImage from "../../assets/images/undraw_tutorial_video_vtd1.png";
 import FacebookButton from "../../components/SharedButtons/FacebookButton";
 import GoogleButton from "../../components/SharedButtons/GoogleButton";
 import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
-import AlertContext from '../../context/alert/alertContext';
-import AuthContext from '../../context/auth/authContext';
+import { connect }  from 'react-redux';
+import { login, clearErrors, loadUser } from '../../redux/actions/authAction';
 import "./Login.css";
 
 const styles = {
@@ -14,48 +14,37 @@ const styles = {
   },
 };
 
-const Login = props => {
-  const authContext = useContext(AuthContext);
-  const alertContext = useContext(AlertContext);
-
-  const { setAlert } = alertContext;
-
-  const { login, error, clearErrors, isAuthenticated, token } = authContext;
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      localStorage.setItem("jwt", token);
-      props.history.push('/roadmap'); //will change later
-    }
-
-    if (error === 'Invalid Credentials') {
-      setAlert(error, 'danger');
-      clearErrors();
-    }
-
-  }, [error, clearErrors, isAuthenticated, setAlert, token, props.history]);
-
+const Login = ({login,setAlert,isAuthenticated,error,clearErrors,history,token,loadUser}) => {
   const [user, setUser] = useState({
     email: '',
     password: '',
     username: ''
   });
-
   const { email, password, username } = user;
-
-  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
-
-  const onSubmit = e => {
-    e.preventDefault();
-    if (email === '' || password === '') {
-      setAlert('Please fill in all fields', 'danger');
-    } else {
-      login({
-        email,
-        username,
-        password
-      });
+  const onChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+  useEffect(()=>{
+    if(isAuthenticated ){
+      localStorage.setItem("jwt", token);
+      history.push('/roadmap')
     }
+    if(token){
+      loadUser()
+    }
+
+    if(error === 'Invalid Credentials'){
+      clearErrors()
+    }
+  },[error,isAuthenticated,history])
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if(email === '' || password === '') {
+      setAlert('Fields cannot be empty','danger');
+      clearErrors()
+    }else{
+      login({email,password})
+    };
   };
 
   return (
@@ -138,4 +127,9 @@ const Login = props => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  token: state.auth.token,
+  error: state.auth.error
+})
+export default connect(mapStateToProps,{login,clearErrors,loadUser})(Login);

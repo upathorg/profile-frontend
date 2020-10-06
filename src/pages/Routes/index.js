@@ -6,12 +6,13 @@ import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
 import Roadmap from "../Roadmap";
 import "./index.css";
-import AuthState from "../../context/auth/authState";
-import AlertState from "../../context/alert/alertState";
+import setAuthToken from "../../utils/setAuthToken";
+
+if(localStorage.token){
+  setAuthToken(localStorage.token)
+}
 
 export default () => (
-  <AuthState>
-    <AlertState>
     <div className="d-flex vw-100 vh-100">
       <SideBar />
       <div className="content-wrapper overflow-auto">
@@ -24,6 +25,4 @@ export default () => (
         </BrowserRouter>
       </div>
     </div>
-    </AlertState>
-  </AuthState>
 );
