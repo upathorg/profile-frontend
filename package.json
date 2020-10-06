@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "redux-devtools-extension": "^2.13.8"
   },
   "dependencies": {
     "@apollo/client": "^3.2.0",
