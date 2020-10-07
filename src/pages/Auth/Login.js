@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import loginImage from "../../assets/images/undraw_tutorial_video_vtd1.png";
 import FacebookButton from "../../components/SharedButtons/FacebookButton";
 import GoogleButton from "../../components/SharedButtons/GoogleButton";
 import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
-import { connect }  from 'react-redux';
-import { login, clearErrors, loadUser } from '../../redux/actions/authAction';
+import { connect } from "react-redux";
+import { login, clearErrors, loadUser } from "../../redux/actions/authAction";
 import "./Login.css";
 
 const styles = {
@@ -14,37 +14,46 @@ const styles = {
   },
 };
 
-const Login = ({login,setAlert,isAuthenticated,error,clearErrors,history,token,loadUser}) => {
+const Login = ({
+  login,
+  setAlert,
+  isAuthenticated,
+  error,
+  clearErrors,
+  history,
+  token,
+  loadUser,
+}) => {
   const [user, setUser] = useState({
-    email: '',
-    password: '',
-    username: ''
+    email: "",
+    password: "",
+    username: "",
   });
   const { email, password, username } = user;
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-  useEffect(()=>{
-    if(isAuthenticated ){
+  useEffect(() => {
+    if (isAuthenticated) {
       localStorage.setItem("jwt", token);
-      history.push('/roadmap')
+      history.push("/roadmap");
     }
-    if(token){
-      loadUser()
+    if (token) {
+      loadUser();
     }
 
-    if(error === 'Invalid Credentials'){
-      clearErrors()
+    if (error === "Invalid Credentials") {
+      clearErrors();
     }
-  },[error,isAuthenticated,history])
+  }, [error, isAuthenticated, history]);
   const onSubmit = (e) => {
     e.preventDefault();
-    if(email === '' || password === '') {
-      setAlert('Fields cannot be empty','danger');
-      clearErrors()
-    }else{
-      login({email,password})
-    };
+    if (email === "" || password === "") {
+      setAlert("Fields cannot be empty", "danger");
+      clearErrors();
+    } else {
+      login({ email, password });
+    }
   };
 
   return (
@@ -76,7 +85,7 @@ const Login = ({login,setAlert,isAuthenticated,error,clearErrors,history,token,l
               <div className="section-border-line"></div>
             </div>
             <Form onSubmit={onSubmit}>
-            <Form.Group>
+              <Form.Group>
                 <Form.Control
                   style={styles.formControl}
                   size="lg"
@@ -130,6 +139,8 @@ const Login = ({login,setAlert,isAuthenticated,error,clearErrors,history,token,l
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   token: state.auth.token,
-  error: state.auth.error
-})
-export default connect(mapStateToProps,{login,clearErrors,loadUser})(Login);
+  error: state.auth.error,
+});
+export default connect(mapStateToProps, { login, clearErrors, loadUser })(
+  Login
+);

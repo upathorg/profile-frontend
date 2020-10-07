@@ -1,44 +1,45 @@
 button.btn {
-    display: flex;
-    justify-content: center;
-    min-width: 9rem;
-    width: 13rem;
-    border-radius: 8px;
-    border-style: none;
-    padding: 0.5rem;
-    box-shadow: -2px -2px 3px rgba(234, 247, 249, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
-    line-height: 24px;
-    font-style: normal;
-    font-weight: 600;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  min-width: 9rem;
+  width: 13rem;
+  border-radius: 8px;
+  border-style: none;
+  padding: 0.5rem;
+  box-shadow: -2px -2px 3px rgba(234, 247, 249, 0.6),
+    2px 2px 3px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 1rem;
 }
 button.btn span {
-    padding-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 button.facebook {
-    color: #FFFFFF;
-    background: #1977F3;
+  color: #ffffff;
+  background: #1977f3;
 }
 button.facebook:hover {
-    color: #FFFFFF;
-    background: #1363cc;
+  color: #ffffff;
+  background: #1363cc;
 }
 
 button.google {
-    color: #000000;
-    background: #FFFFFF;
+  color: #000000;
+  background: #ffffff;
 }
 button.google:hover {
-    background: #d4d4d4;
+  background: #d4d4d4;
 }
 
 button.linkedin {
-    color: #FFFFFF;
-    background: #0077B5;
+  color: #ffffff;
+  background: #0077b5;
 }
 button.linkedin:hover {
-    color: #FFFFFF;
-    background: #014f79;
+  color: #ffffff;
+  background: #014f79;
 }

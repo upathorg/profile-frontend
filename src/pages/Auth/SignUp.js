@@ -28,7 +28,7 @@ const SignUp = () => {
         <Col className="image-container" xs={5}>
           <img className="login-image" src={signUpImage} alt="Login Main" />
         </Col>
-        <Col className="form-container" >
+        <Col className="form-container">
           <div>
             <p className="signup-paragraph">
               Already a member? <a href="/login">Sign in</a>

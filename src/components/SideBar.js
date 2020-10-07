@@ -1,7 +1,7 @@
-import React from 'react';
-import DashboardSvg from '../svg/dashboard';
-import ProfileSvg from '../svg/profile';
-import ExercisesSvg from '../svg/exercises'
+import React from "react";
+import DashboardSvg from "../svg/dashboard";
+import ProfileSvg from "../svg/profile";
+import ExercisesSvg from "../svg/exercises";
 
 const SideBar = () => {
   return (
@@ -36,6 +36,6 @@ const SideBar = () => {
         </li>
       </ul>
     </aside>
-  )
-}
+  );
+};
 export default SideBar;
