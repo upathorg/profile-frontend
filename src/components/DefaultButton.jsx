@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function DefaultButton({ children, onClick, ...props }) {
   if (props.disabled) {
-    return <Base {...props}>{children}</Base>
+    return <Base {...props}>{children}</Base>;
   }
 
   return (
@@ -25,7 +25,7 @@ const Base = styled.button`
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #383B41;
+  color: #383b41;
   cursor: not-allowed;
 
   &:focus {
@@ -34,7 +34,7 @@ const Base = styled.button`
 `;
 
 const Root = styled(Base)`
-  border: ${(props) => (props.secondary && "1px solid #0099FF")};
+  border: ${(props) => props.secondary && "1px solid #0099FF"};
   background: ${(props) => (props.secondary ? "inherit" : "#0099ff")};
   color: ${(props) => (props.secondary ? "#383B41" : "white")};
   cursor: pointer;

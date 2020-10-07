@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from '../assets/images/sharpstudy.png'
+import logo from "../assets/images/sharpstudy.png";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -35,7 +35,8 @@ const Navbar = () => {
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray hover:opacity-75"
                   href="/"
                 >
-                  <i className="text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Harrison Ekpobimi</span>
+                  <i className="text-lg leading-lg text-white opacity-75"></i>
+                  <span className="ml-2">Harrison Ekpobimi</span>
                 </a>
               </li>
               |
@@ -44,7 +45,8 @@ const Navbar = () => {
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray hover:opacity-75"
                   href="/"
                 >
-                  <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Log Out</span>
+                  <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
+                  <span className="ml-2">Log Out</span>
                 </a>
               </li>
             </ul>
@@ -53,6 +55,6 @@ const Navbar = () => {
       </nav>
     </div>
   );
-}
+};
 
 export default Navbar;

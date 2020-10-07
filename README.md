@@ -6,18 +6,20 @@ This repository is for the SharpStudy web app.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* Clone this repo
-* `cd` into the source dir
+- Clone this repo
+- `cd` into the source dir
 
 ### Prerequisites
 
 Grab a copy of the `.env` file from any of the developers working on the project. It should have a structure like below:
+
 ```
 LOGIN_URL_ENDPOINT="............"
 SIGN_IN_URL_ENDPOINT="..........."
 ```
 
 [Install yarn](https://classic.yarnpkg.com/en/docs/install) globally on your machine
+
 ```
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
@@ -27,6 +29,7 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 With the `.env` file at the root directory of your system, and with yarn installed:
 
 - Install dependencies using `yarn`
+
 ```
 yarn
 ```
@@ -56,13 +59,16 @@ Give an example
 Provide a detailed list of current environments, how they can accessed and any other relevant information.
 
 ### DEV
+
 - Yet to be configured
 
 ### UAT
--  Yet to be configured
+
+- Yet to be configured
 
 ### MASTER
--  Yet to be configured
+
+- Yet to be configured
 
 ## Deployment
 
@@ -73,7 +79,7 @@ Deployments are automatically started when Pull Requests are merged into each of
 Details of the tech stack that has been used.
 
 - [React](https://reactjs.org/) - The client framework used, and has been setup using [create-react-app](https://github.com/facebook/create-react-app)
-- [JavaScript] - app is configured to use JavaScript                                                                                                 |
+- [JavaScript] - app is configured to use JavaScript |
 
 ## Contributing
 
@@ -95,6 +101,7 @@ A running changelog can be found here: [CHANGELOG.md](CHANGELOG.md)
 ## Licenses
 
 License checker summary `npx license-checker --summary`
+
 ```
 ├─ MIT: 1626
 ├─ ISC: 169
@@ -125,4 +132,3 @@ License checker summary `npx license-checker --summary`
 ├─ (BSD-2-Clause OR MIT): 1
 └─ (GPL-2.0 OR MIT): 1
 ```
-
