@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SideBar from "../../components/SideBar";
+import setAuthToken from "../../utils/setAuthToken";
 import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
+import Profile from "../Profile";
 import Roadmap from "../Roadmap";
 import "./index.css";
-import setAuthToken from "../../utils/setAuthToken";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -25,6 +26,7 @@ export default () => (
             render={(props) => <SignUp {...props} />}
           />
           <Route exact path="/roadmap" component={Roadmap} />
+          <Route exact path="/profile" component={Profile} />
         </Switch>
       </BrowserRouter>
     </div>

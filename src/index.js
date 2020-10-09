@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 // import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'; we will re-introduce later
-// import { createStore, applyMiddleware } from 'redux'; we will re-introduce later
 
 import Routes from "./pages/Routes";
-import { Provider } from "react-redux";
+import "./styles/index.scss";
 import store from "./store";
 
 // const client = new ApolloClient({
