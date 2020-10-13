@@ -8,7 +8,9 @@ import "./styles.css";
 
 export default function Roadmap({ roadmaps = initData }) {
   const [currentRoadmap, setCurrentRoadmap] = React.useState(roadmaps[0]);
-
+  let StoredToken = document.cookie;
+  
+  console.log(StoredToken, '\n===============TOKEN================')
   return (
     <div className="container">
       <RoadmapMenu
