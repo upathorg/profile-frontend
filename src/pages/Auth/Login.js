@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import loginImage from "../../assets/images/undraw_tutorial_video_vtd1.png";
 import FacebookButton from "../../components/SharedButtons/FacebookButton";
