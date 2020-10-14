@@ -9,7 +9,7 @@ export default function Display({ setEditMode, ...data }) {
     <div className="position-relative">
       <div className="my-4">
         <div>
-          <p className="text--display1 font-weight-bold">Skills</p>
+          <p className="profile__indexes">Skills</p>
 
           <div className="flex flex-wrap">
             {skills.length > 0 ? (
@@ -28,7 +28,7 @@ export default function Display({ setEditMode, ...data }) {
         </div>
 
         <div>
-          <p className="text--display1 mt-5 font-weight-bold">Schools</p>
+          <p className="profile__indexes mt-5">Schools</p>
 
           {schools.length > 0 ? (
             schools.map(({ name, level, completed, field }, i) => (

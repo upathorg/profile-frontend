@@ -34,37 +34,37 @@ export default function Display({ setEditMode, roadmap, ...data }) {
           </div>
 
           <div className="ml-3 align-self-center">
-            <p className="text--display1 mb-0 font-weight-bold text-uppercase">
+            <p className="profile__indexes mb-0 text-uppercase">
               {firstname} {lastname}
             </p>
-            <p className="text--lead">
+            <p className="roadmap__text">
               Username: <span className="font-weight-light">{username}</span>
             </p>
           </div>
         </div>
 
-        <p className="text--lead mt-3  mb-0">
+        <p className="roadmap__text mt-3  mb-0">
           Email Address: <span className="font-weight-light">{email}</span>
         </p>
 
-        <p className="text--lead mt-5 mb-0">
+        <p className="roadmap__text mt-5 mb-0">
           Date of Birth: <span className="font-weight-light">{birthDate}</span>
         </p>
         <p className="m-1">* only you can see</p>
 
-        <p className="text--lead mt-5 mb-0">
+        <p className="roadmap__text mt-5 mb-0">
           Location:{" "}
           <span className="font-weight-light">
             {city}, {country}
           </span>
         </p>
 
-        <p className="text--lead mt-5 mb-0">
+        <p className="roadmap__text mt-5 mb-0">
           Language:{" "}
           <span className="font-weight-light">{preferredLanguage}</span>
         </p>
 
-        <p className="text--lead mt-5 mb-0">
+        <p className="roadmap__text mt-5 mb-0">
           Roadmap Duration:{" "}
           <span className="font-weight-light">{roadmap.duration}</span>
         </p>
@@ -72,7 +72,7 @@ export default function Display({ setEditMode, roadmap, ...data }) {
           <ProgressBar progress={roadmap.progress} status={roadmap.status} />
         </div>
 
-        <p className="text--lead mt-5 mb-0">Your Mentors</p>
+        <p className="roadmap__text mt-5 mb-0">Your Mentors</p>
         <div className="d-flex mt-2">
           {mentors.length > 0 ? (
             mentors.map(({ profileImage, username }, i) => (

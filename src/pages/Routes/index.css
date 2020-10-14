@@ -1,11 +1,13 @@
 body {
   font-family: "Muli", sans-serif;
   font-size: 100%;
+  color: #383b41;
 }
+
 .content-wrapper {
   width: 100%;
 }
-.logo {
-  object-fit: contain;
-  width: 200px;
+
+.cursor--pointer {
+  cursor: pointer;
 }

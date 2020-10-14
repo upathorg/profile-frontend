@@ -1,19 +1,15 @@
-h1 {
-  font-size: 32px;
-  line-height: 40px;
-}
-
-.roadmap__text {
-  font-size: 24px;
-  line-height: 32px;
-}
+@import "../../styles/index.scss";
 
 .text--orange {
   color: #f2994a;
 }
 
-.cursor--pointer {
-  cursor: pointer;
+.roadmap-menu__heading {
+  @include text--display1;
+}
+
+.roadmap__text {
+  @include text--lead;
 }
 
 .dropdown__content {
@@ -27,10 +23,10 @@ h1 {
   transition: all 0.5s;
   font-size: 16px;
   line-height: 24px;
-}
 
-.dropdown__item:hover {
-  background: #eaf7f9;
+  &:hover {
+    background: $light-blue;
+  }
 }
 
 .circle__root {

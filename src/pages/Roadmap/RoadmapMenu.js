@@ -20,7 +20,7 @@ export default function RoadmapMenu({
         className="cursor--pointer d-flex align-items-center"
         onClick={() => setOpenDropdown(!openDropdown)}
       >
-        <h1 className="my-4 font-weight-bold">{currentRoadmap.name}</h1>
+        <h1 className="roadmap-menu__heading my-4">{currentRoadmap.name}</h1>
         <DownIcon className="ml-2" />
       </div>
 

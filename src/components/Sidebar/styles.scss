@@ -1,0 +1,74 @@
+@import "../../styles/index.scss";
+
+.sidebar__root {
+  ul {
+    background: $lighter-grey;
+    height: 100%;
+  }
+
+  li {
+    height: 24px;
+
+    &:hover {
+      i,
+      span {
+        color: $dark-blue;
+      }
+      svg {
+        fill: $dark-blue;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $dark-grey;
+  }
+}
+
+.sidebar__nav--active {
+  svg {
+    fill: $main-blue;
+  }
+}
+
+.sidebar__notepad {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+
+  fill: $dark-grey;
+}
+
+@media (max-width: 576px) {
+  .sidebar__root {
+    ul {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      height: $bottom-nav-height;
+      z-index: 10;
+    }
+
+    li {
+      height: 32px;
+
+      &:first-child {
+        display: none;
+      }
+    }
+
+    i {
+      font-size: 32px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  .sidebar__notepad {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 
+import DashboardWrapper from "../../components/DashboardWrapper";
 import Basics from "./Basics";
 import Educations from "./Educations";
 import RoadmapList from "./RoadmapList";
@@ -27,7 +28,7 @@ export default function Profile({ roadmaps = initData }) {
   };
 
   return (
-    <section className="position-relative row mx-0 w-100 vh-100">
+    <DashboardWrapper className="position-relative row">
       <article className="col-12 col-lg-9">
         <header className="profile__content-header pt-4 px-4 pb-2">
           <h1>{editMode ? "Edit Profile" : "Profile"}</h1>
@@ -51,7 +52,7 @@ export default function Profile({ roadmaps = initData }) {
           setSelectedRoadmap={setSelectedRoadmap}
         />
       </aside>
-    </section>
+    </DashboardWrapper>
   );
 }
 

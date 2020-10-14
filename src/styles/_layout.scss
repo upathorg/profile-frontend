@@ -1,0 +1,7 @@
+$navbar-height: 64px;
+$height-without-nav: calc(100vh - #{$navbar-height});
+
+$bottom-nav-height: 64px;
+$height-without-nav-mobile: calc(
+  100vh - #{$navbar-height} - #{$bottom-nav-height}
+);

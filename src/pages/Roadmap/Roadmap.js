@@ -1,40 +1,46 @@
 import React from "react";
 
+import DashboardWrapper from "../../components/DashboardWrapper";
 import Button from "../../components/DefaultButton";
 import ProgressCard from "./ProgressCard";
 import ProgressCircle from "./ProgressCircle";
 import RoadmapMenu from "./RoadmapMenu";
-import "./styles.css";
+import "./styles.scss";
 
 export default function Roadmap({ roadmaps = initData }) {
   const [currentRoadmap, setCurrentRoadmap] = React.useState(roadmaps[0]);
 
   return (
-    <div className="container">
-      <RoadmapMenu
-        roadmaps={roadmaps}
-        currentRoadmap={currentRoadmap}
-        setCurrentRoadmap={(roadmap) => setCurrentRoadmap(roadmap)}
-      />
+    <DashboardWrapper>
+      <div className="container">
+        <RoadmapMenu
+          roadmaps={roadmaps}
+          currentRoadmap={currentRoadmap}
+          setCurrentRoadmap={(roadmap) => setCurrentRoadmap(roadmap)}
+        />
 
-      <p className="mb-4 font-weight-light">{currentRoadmap.description}</p>
+        <p className="mb-4 font-weight-light">{currentRoadmap.description}</p>
 
-      <div className="row align-items-center justify-content-center">
-        <div className="col-12 col-md-8 col-xlg-6 mb-4">
-          <ProgressCircle {...currentRoadmap} />
+        <div className="row align-items-center justify-content-center">
+          <div className="col-12 col-md-8 col-xlg-6 mb-4">
+            <ProgressCircle {...currentRoadmap} />
 
-          <Button className="mt-5 mx-auto" onClick={() => console.log("test")}>
-            test your knowledge
-          </Button>
-        </div>
+            <Button
+              className="mt-5 mx-auto"
+              onClick={() => console.log("test")}
+            >
+              test your knowledge
+            </Button>
+          </div>
 
-        <div className="col-12 offset-md-1 col-md-3 mx-auto px-0 row">
-          {currentRoadmap.cards.map((card, i) => (
-            <ProgressCard {...card} key={i} />
-          ))}
+          <div className="col-12 offset-md-1 col-md-3 mx-auto px-0 row">
+            {currentRoadmap.cards.map((card, i) => (
+              <ProgressCard {...card} key={`card-${i}`} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </DashboardWrapper>
   );
 }
 

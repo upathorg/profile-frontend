@@ -1,0 +1,17 @@
+@import "../../styles/index.scss";
+
+.dashboard__root {
+  position: fixed;
+  top: $navbar-height;
+  right: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: $height-without-nav;
+}
+
+@media (max-width: 576px) {
+  .dashboard__root {
+    height: $height-without-nav-mobile;
+  }
+}

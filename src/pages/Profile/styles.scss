@@ -53,6 +53,7 @@ $profile-image-size: 125px;
 .profile__mentor-image {
   width: 48px;
   height: 48px;
+  border-radius: 50%;
 
   path {
     fill: $main-blue;
@@ -90,6 +91,10 @@ $profile-image-size: 125px;
   cursor: pointer;
 }
 
+.profile__indexes {
+  @include text--display1;
+}
+
 .profile__label {
   font-size: 22px;
   line-height: 16px;
@@ -115,7 +120,7 @@ $profile-image-size: 125px;
   right: 0;
   bottom: 0;
   padding: 6rem 1.5rem 1.5rem;
-  height: 100vh;
+  height: $height-without-nav;
   background: #f8f8f8;
   color: #383b41;
 }

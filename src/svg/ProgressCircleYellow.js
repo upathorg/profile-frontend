@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProgressCircleYellow({ ...props }) {
+export default function ProgressCircleYellow(props) {
   return (
     <svg
       width="445"

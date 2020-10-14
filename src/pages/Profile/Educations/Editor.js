@@ -60,7 +60,7 @@ export default function Editor({ setEditMode, ...data }) {
   return (
     <>
       <div className="my-4">
-        <p className="text--display1 font-weight-bold">Skills</p>
+        <p className="profile__indexes">Skills</p>
 
         <div className="d-flex flex-wrap">
           {skills.length > 0 &&
@@ -91,7 +91,7 @@ export default function Editor({ setEditMode, ...data }) {
           onKeyPress={handleKeyPress}
         />
 
-        <p className="text--display1 mt-5 font-weight-bold">Schools</p>
+        <p className="profile__indexes mt-5">Schools</p>
 
         <div>
           {schools.length > 0 &&

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ChevronDown({ ...props }) {
+export default function ChevronDown(props) {
   return (
     <svg
       width="32"
