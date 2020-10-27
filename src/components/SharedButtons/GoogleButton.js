@@ -6,7 +6,7 @@ import { GOOGLE_LOGIN } from "../../utils/config";
 
 const GoogleButton = (props) => {
   
-  const onClickHandler = () => {window.location.href="http://localhost:5000/auth/google"};
+  const onClickHandler = () => {window.location.href="/auth/google"};
 
 
   return (
