@@ -2,6 +2,15 @@
 
 $profile-image-size: 125px;
 
+.profile__text {
+  @include text--lead;
+}
+
+.profile__text--small {
+  @include text--body;
+  color: $inactive-text;
+}
+
 .profile__content-header {
   position: sticky;
   top: 0;

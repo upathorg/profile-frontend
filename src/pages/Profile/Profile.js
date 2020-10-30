@@ -12,6 +12,8 @@ export default function Profile({ roadmaps = initData }) {
   const [activeTab, setActiveTab] = React.useState(0); // 0: Basics, 1: Educations
   const [selectedRoadmap, setSelectedRoadmap] = React.useState(0);
 
+  // TODO: graphql GET_ROADMAPS
+
   const Contents = () => {
     switch (activeTab) {
       case 1:
@@ -56,6 +58,7 @@ export default function Profile({ roadmaps = initData }) {
   );
 }
 
+// TODO: delete after implementing GET_ROADMAPS
 const initData = [
   {
     name: "Roadmap Name 1",

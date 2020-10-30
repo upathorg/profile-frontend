@@ -1,49 +1,35 @@
+import { useQuery } from "@apollo/client";
 import React from "react";
+// import { useSelector } from "react-redux";
 
+import { GET_PROFILE } from "../../../graphql/query/profile";
 import Display from "./Display";
 import Editor from "./Editor";
 
-export default function Basics({
-  editMode,
-  setEditMode,
-  roadmap,
-  data = initData,
-}) {
+export default function Basics({ editMode, setEditMode, roadmap }) {
+  // TODO: get ids from redux and replace temporary ids
+  // const {userId, profileId} = useSelector((state) => state.auth?.user);
+  const userId = "1"; // temporary id
+  const profileId = "3"; // temporary id
+
+  const { loading, error, data } = useQuery(GET_PROFILE, {
+    variables: { userId, profileId },
+  });
+
+  if (loading || !data) {
+    return <p>loading...</p>;
+  }
+
+  if (error) {
+    console.error(error);
+    return null;
+  }
+
+  const profile = { ...data.userById, ...data.profileById };
+
   return editMode ? (
-    <Editor setEditMode={setEditMode} {...data} />
+    <Editor setEditMode={setEditMode} {...profile} />
   ) : (
-    <Display setEditMode={setEditMode} roadmap={roadmap} {...data} />
+    <Display setEditMode={setEditMode} roadmap={roadmap} {...profile} />
   );
 }
-
-const initData = {
-  userId: "ID",
-  profileImage: "",
-  email: "travisname@gmail.com",
-  password: "",
-  username: "TravisName",
-  gender: "male",
-  firstname: "Travis",
-  lastname: "Name",
-  aboutMe: "",
-  phoneNumber: "123-456-7890",
-  location: { country: "Canada", city: "Vancouver" },
-  birthDate: "1997-05-17",
-  socialProfile: ["website url", "LinkedIn url"],
-  preferredLanguage: "English",
-  mentors: [
-    { profileImage: "", username: "Josh" },
-    { profileImage: "", username: "Adam" },
-    { profileImage: "", username: "Carl" },
-  ],
-  roadmaps: [
-    {
-      name: "Roadmap Name 1",
-      status: "completed",
-    },
-    {
-      name: "Roadmap Name 2",
-      status: "ongoing",
-    },
-  ],
-};

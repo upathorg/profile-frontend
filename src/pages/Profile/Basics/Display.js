@@ -4,18 +4,26 @@ import Button from "../../../components/DefaultButton";
 import ProgressBar from "../../../components/ProgressBar";
 import AccountIcon from "../../../svg/AccountCircle";
 
-export default function Display({ setEditMode, roadmap, ...data }) {
+export default function Display({ setEditMode, roadmap, mentors, ...data }) {
   const {
     profileImage,
-    firstname,
-    lastname,
     username,
     email,
+    firstname,
+    lastname,
     birthDate,
-    location: { country, city },
+    location,
     preferredLanguage,
-    mentors,
   } = data;
+
+  const EMPTY_CONTENT = "You haven't added yet";
+
+  const getLocation = () => {
+    const [country, ...rest] = location.split(",");
+    const city = rest.join(" ");
+
+    return `${city}, ${country}`;
+  };
 
   return (
     <>
@@ -37,44 +45,56 @@ export default function Display({ setEditMode, roadmap, ...data }) {
             <p className="profile__indexes mb-0 text-uppercase">
               {firstname} {lastname}
             </p>
-            <p className="roadmap__text">
-              Username: <span className="font-weight-light">{username}</span>
+            <p className="profile__text">
+              Username:{" "}
+              <span className="font-weight-light ml-1">{username}</span>
             </p>
           </div>
         </div>
 
-        <p className="roadmap__text mt-3  mb-0">
-          Email Address: <span className="font-weight-light">{email}</span>
+        <p className="profile__text mt-3  mb-0">
+          Email Address: <span className="font-weight-light ml-1">{email}</span>
         </p>
 
-        <p className="roadmap__text mt-5 mb-0">
-          Date of Birth: <span className="font-weight-light">{birthDate}</span>
+        <p className="profile__text mt-5 mb-0">
+          Date of Birth:
+          {birthDate ? (
+            <span className="font-weight-light ml-1">birthDate</span>
+          ) : (
+            <span className="profile__text--small ml-2">{EMPTY_CONTENT}</span>
+          )}
         </p>
         <p className="m-1">* only you can see</p>
 
-        <p className="roadmap__text mt-5 mb-0">
-          Location:{" "}
-          <span className="font-weight-light">
-            {city}, {country}
-          </span>
+        <p className="profile__text mt-5 mb-0">
+          Location:
+          {location ? (
+            <span className="font-weight-light ml-1">{getLocation()}</span>
+          ) : (
+            <span className="profile__text--small ml-2">{EMPTY_CONTENT}</span>
+          )}
         </p>
 
-        <p className="roadmap__text mt-5 mb-0">
-          Language:{" "}
-          <span className="font-weight-light">{preferredLanguage}</span>
+        <p className="profile__text mt-5 mb-0">
+          Language:
+          {preferredLanguage ? (
+            <span className="font-weight-light ml-1">preferredLanguage</span>
+          ) : (
+            <span className="profile__text--small ml-2">{EMPTY_CONTENT}</span>
+          )}
         </p>
 
-        <p className="roadmap__text mt-5 mb-0">
-          Roadmap Duration:{" "}
-          <span className="font-weight-light">{roadmap.duration}</span>
+        <p className="profile__text mt-5 mb-0">
+          Roadmap Duration:
+          <span className="font-weight-light ml-2">{roadmap.duration}</span>
         </p>
         <div className="mt-3">
           <ProgressBar progress={roadmap.progress} status={roadmap.status} />
         </div>
 
-        <p className="roadmap__text mt-5 mb-0">Your Mentors</p>
+        <p className="profile__text mt-5 mb-0">Your Mentors</p>
         <div className="d-flex mt-2">
-          {mentors.length > 0 ? (
+          {mentors?.length > 0 ? (
             mentors.map(({ profileImage, username }, i) => (
               <div
                 key={`mentor-${i}`}
@@ -97,7 +117,9 @@ export default function Display({ setEditMode, roadmap, ...data }) {
               </div>
             ))
           ) : (
-            <p className="m-1">You don't have a mentor yet</p>
+            <span className="profile__text--small ml-2">
+              You haven't had a mentor yet
+            </span>
           )}
         </div>
       </div>

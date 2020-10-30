@@ -7,55 +7,66 @@ import AddSocialProfile from "./AddSocialProfile";
 export default function Editor({ setEditMode, ...data }) {
   const [profile, setProfile] = React.useState({ ...data });
   const [showAddSocialProfile, setShowAddSocialProfile] = React.useState(false);
-  const {
-    profileImage,
-    firstname,
-    lastname,
-    username,
-    email,
-    birthDate,
-    location: { country, city },
-    preferredLanguage,
-    gender,
-    socialProfile,
-  } = profile;
+
+  const [socialProfile, setSocialProfile] = React.useState([]);
+
+  if (data.socialProfile) {
+    setSocialProfile(data.socialProfile.split(","));
+  }
+
+  const [location, setLocation] = React.useState({
+    country: "",
+    city: "",
+  });
+
+  if (data.location) {
+    const [country, ...rest] = location.split(",");
+    const city = rest.join(" ");
+    setLocation({ country, city });
+  }
 
   const inputList = [
     {
       label: "First Name",
       type: "text",
       name: "firstname",
-      defaultValue: firstname,
+      defaultValue: profile.firstname,
     },
     {
       label: "Last Name",
       type: "text",
       name: "lastname",
-      defaultValue: lastname,
+      defaultValue: profile.lastname,
     },
     {
       label: "Username",
       type: "text",
       name: "username",
-      defaultValue: username,
+      defaultValue: profile.username,
     },
     {
       label: "Email Address",
       type: "email",
       name: "email",
-      defaultValue: email,
+      defaultValue: profile.email,
+    },
+    {
+      label: "Phone number",
+      type: "tel",
+      name: "phoneNumber",
+      defaultValue: profile.phoneNumber,
     },
     {
       label: "Date of Birth",
       type: "date",
       name: "birthDate",
-      defaultValue: birthDate,
+      defaultValue: profile.birthDate,
     },
     {
       label: "Language",
       type: "text",
       name: "preferredLanguage",
-      defaultValue: preferredLanguage,
+      defaultValue: profile.preferredLanguage,
     },
   ];
 
@@ -66,36 +77,35 @@ export default function Editor({ setEditMode, ...data }) {
     });
   };
 
-  const handleDelete = (index) => {
-    let newSocialProfile = [...socialProfile];
-    newSocialProfile.splice(index, 1);
-
-    setProfile({
-      ...profile,
-      socialProfile: newSocialProfile,
-    });
-  };
-
-  const handleAddSocialLink = (url) => {
-    let newSocialProfile = [...socialProfile];
-    newSocialProfile.push(url);
-
-    setProfile({
-      ...profile,
-      socialProfile: newSocialProfile,
+  const handleEditLocation = async (e) => {
+    setLocation({
+      ...location,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleFileUpload = (e) => {
     console.log(e.target.files[0]);
-    // upload image and save
+    // TODO: upload image and save
   };
 
   const handleSave = (e) => {
     e.preventDefault();
 
-    // graphQL mutation
-    // refetch profile
+    let newLocation = "";
+    if (location.country === "") {
+      newLocation = location.city;
+    } else {
+      newLocation = `${location.country}, ${location.city}`;
+    }
+
+    setProfile({
+      ...profile,
+      location: newLocation,
+      socialProfile: socialProfile.length > 0 ? socialProfile.join(",") : "",
+    });
+
+    // TODO: graphQL mutation
 
     setEditMode(false);
   };
@@ -104,8 +114,12 @@ export default function Editor({ setEditMode, ...data }) {
     <>
       <div className="my-4">
         <div className="profile__image__wrapper">
-          {profileImage ? (
-            <img src={profileImage} alt="profile" className="profile__image" />
+          {profile.profileImage ? (
+            <img
+              src={profile.profileImage}
+              alt="profile"
+              className="profile__image"
+            />
           ) : (
             <AccountIcon className="profile__image" />
           )}
@@ -147,7 +161,7 @@ export default function Editor({ setEditMode, ...data }) {
                   type="radio"
                   name="gender"
                   value={val}
-                  checked={gender === val}
+                  checked={profile.gender === val}
                   className="mr-2 text-Capitalize"
                   onChange={handleChange}
                 />
@@ -163,8 +177,9 @@ export default function Editor({ setEditMode, ...data }) {
 
               <input
                 type="text"
-                defaultValue={country}
-                onChange={handleChange}
+                name="country"
+                defaultValue={location.country}
+                onChange={handleEditLocation}
                 className="profile__input"
               />
             </div>
@@ -175,23 +190,38 @@ export default function Editor({ setEditMode, ...data }) {
 
               <input
                 type="text"
-                defaultValue={city}
-                onChange={handleChange}
+                name="city"
+                defaultValue={location.city}
+                onChange={handleEditLocation}
                 className="profile__input"
               />
             </div>
           </div>
 
+          <div className="mb-5 col-12">
+            <label className="profile__label">About Me</label>
+            <br />
+
+            <textarea
+              name="aboutMe"
+              defaultValue={profile.aboutMe}
+              onChange={handleChange}
+              className="profile__input"
+            />
+          </div>
+
           <div className="mb-5 col-12 col-md-6">
             <label className="profile__label">Social Profile</label>
 
-            {socialProfile.length > 0 &&
+            {socialProfile?.length > 0 &&
               socialProfile.map((url, i) => (
                 <div className="d-flex my-3" key={`social-link-${i}`}>
                   <u>{url}</u>
                   <i
                     className="material-icons profile__circle-clear ml-3"
-                    onClick={() => handleDelete(i)}
+                    onClick={(i) =>
+                      setSocialProfile(socialProfile.splice(i, 1))
+                    }
                   >
                     highlight_off
                   </i>
@@ -223,7 +253,7 @@ export default function Editor({ setEditMode, ...data }) {
       <AddSocialProfile
         open={showAddSocialProfile}
         setOpen={setShowAddSocialProfile}
-        add={handleAddSocialLink}
+        add={(url) => setSocialProfile([...socialProfile, url])}
       />
     </>
   );
