@@ -1,8 +1,8 @@
 export const HOME = "/";
+export const ABOUT = "/about";
 
 export const LOGIN = "/login";
 export const SIGNUP = "/signup";
-export const LOGOUT = "/logout";
 
 export const ROADMAP = "/roadmap";
 export const PROFILE = "/profile";
