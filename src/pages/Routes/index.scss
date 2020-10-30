@@ -1,0 +1,18 @@
+@import "../../styles/index.scss";
+
+body {
+  font-family: "Muli", sans-serif;
+  font-size: 100%;
+  color: $active-text;
+}
+
+.content__body {
+  position: absolute;
+  top: $navbar-height;
+  right: 0;
+  left: 0;
+}
+
+.cursor--pointer {
+  cursor: pointer;
+}

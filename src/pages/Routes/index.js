@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../../components/Navbar";
-// import Sidebar from "../../components/Sidebar";
 import setAuthToken from "../../utils/setAuthToken";
 import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
@@ -10,7 +9,7 @@ import Profile from "../Profile";
 import Roadmap from "../Roadmap";
 import PrivateRoute from "./PrivateRoute";
 import * as PATH from "./constants";
-import "./index.css";
+import "./index.scss";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -20,10 +19,7 @@ export default () => (
   <BrowserRouter>
     <Navbar />
 
-    <div className="vw-100">
-      {/* <Sidebar /> */}
-
-      {/* <div className="content-wrapper overflow-auto"> */}
+    <div className="content__body overflow-auto vw-100">
       <Switch>
         <Route
           exact
@@ -39,6 +35,5 @@ export default () => (
         <PrivateRoute exact path={PATH.PROFILE} component={Profile} />
       </Switch>
     </div>
-    {/* </div> */}
   </BrowserRouter>
 );
