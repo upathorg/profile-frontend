@@ -1,14 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-import logo from "../../assets/images/sharpStudy-logo-grayscale.png";
-import * as PATH from "../../pages/Routes/constants";
-import AuthenticatedLink from "./AuthenticatedLink";
-import NonAuthenticatedLink from "./NonAuthenticatedLink";
+import useOutsideClickDetector from "../../hooks/useOutsideClickDetector";
+import useWindowSize from "../../hooks/useWindowSize";
+import { HOME } from "../../pages/Routes/constants";
+import SharpStudyLogo from "../../svg/SharpStudyLogo";
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
 import "./styles.scss";
 
 const Navbar = () => {
-  // TODO: use redux after implement signup/login
+  // TODO: use redux and/or graphql after implement signup/login
   // const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
   // const user = useSelector((state) => state.auth?.user);
 
@@ -18,55 +20,55 @@ const Navbar = () => {
     profileImage: "",
   };
 
-  const [searchKeyword, setSearchKeyword] = React.useState("");
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = React.useState(false);
+  const mobileMenuRef = React.useRef(null);
+  const isClickedOutside = useOutsideClickDetector(mobileMenuRef);
+  const windowSize = useWindowSize();
 
-  const handleSearch = () => {
-    // TODO: Search
-    console.log(`Searching: ${searchKeyword}`);
-  };
+  React.useEffect(() => {
+    if (windowSize.width < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [windowSize]);
+
+  React.useEffect(() => {
+    if (openMobileMenu && isClickedOutside) {
+      setOpenMobileMenu(false);
+    }
+  }, [openMobileMenu, isClickedOutside]);
 
   return (
     <nav className="navbar__root fixed-top d-flex p-3">
-      <div className="mr-auto p-2">
-        <a href={PATH.HOME}>
-          <img src={logo} alt="SharpStudy" className="navbar__logo" />
+      <div className="mr-auto px-2 align-self-center">
+        <a href={HOME}>
+          <SharpStudyLogo className="navbar__logo" />
         </a>
       </div>
 
-      <a href={PATH.COURSE} className="mx-4 font-weight-bold align-self-center">
-        Courses
-      </a>
+      {!isMobile ? (
+        <DesktopMenu isAuthenticated={isAuthenticated} user={user} />
+      ) : (
+        <>
+          <i
+            className="material-icons mobile-menu__icon cursor--pointer text-white"
+            onClick={() => setOpenMobileMenu(!openMobileMenu)}
+          >
+            menu
+          </i>
 
-      <a href={PATH.ABOUT} className="mx-4 font-weight-bold align-self-center">
-        About
-      </a>
-
-      <div className="navbar__search d-flex align-self-center mx-2 py-1 px-2">
-        <i
-          className="material-icons mr-2 cursor--pointer"
-          onClick={handleSearch}
-        >
-          search
-        </i>
-        <input
-          type="text"
-          placeholder="Search e.g. HTML..."
-          value={searchKeyword}
-          className="navbar__search-input"
-          onChange={(e) => setSearchKeyword(e.target.value)}
-          onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-        />
-      </div>
-
-      <div className="pr-4 align-self-center">
-        {isAuthenticated ? (
-          <AuthenticatedLink {...user} />
-        ) : (
-          <NonAuthenticatedLink />
-        )}
-      </div>
-
-      <div className="navbar__divider" />
+          {openMobileMenu && (
+            <MobileMenu
+              ref={mobileMenuRef}
+              user={user}
+              isAuthenticated={isAuthenticated}
+              close={() => setOpenMobileMenu(false)}
+            />
+          )}
+        </>
+      )}
     </nav>
   );
 };

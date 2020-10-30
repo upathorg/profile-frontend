@@ -3,24 +3,11 @@
 .navbar__root {
   background: #ffffff;
   height: $navbar-height;
+  border-bottom: solid 1.2px #dfe1e5;
 
   a {
     color: $active-text;
   }
-}
-
-.navbar__logo {
-  object-fit: contain;
-  width: 200px;
-}
-
-.navbar__divider {
-  position: fixed;
-  top: $navbar-height;
-  left: 0;
-  background: #dfe1e5;
-  width: 100vw;
-  height: 1.2px;
 }
 
 .navbar__user-image {
@@ -35,7 +22,7 @@
   color: $main-blue;
 }
 
-.navbar__search {
+.search-bar__root {
   border: 1px solid $main-blue;
   box-sizing: border-box;
   border-radius: 4px;
@@ -46,9 +33,11 @@
   }
 }
 
-.navbar__search-input {
+.search-bar__input {
   font-weight: 200;
   outline: none;
+  background: inherit;
+  width: 100%;
 
   &::placeholder {
     color: $inactive-text;
@@ -106,12 +95,36 @@
       }
     }
   }
+}
 
-  .account-menu__logout {
-    color: $error-red;
+.account-menu__logout {
+  color: $error-red;
 
-    &::after {
-      display: none;
-    }
+  &::after {
+    display: none;
+  }
+}
+
+.mobile-menu__root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $lighter-grey;
+}
+
+.mobile-menu__icon {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar__root {
+    background: $main-blue;
+  }
+
+  .navbar__logo {
+    fill: white;
   }
 }

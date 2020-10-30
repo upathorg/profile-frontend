@@ -17,14 +17,14 @@ export default function AuthenticatedLink({ username, profileImage }) {
 
   return (
     <>
-      <div className="d-flex">
-        <a href="" className="ml-4 font-weight-bold align-self-center">
+      <div className="d-flex flex-column flex-lg-row">
+        <a href="" className="m-3 ml-lg-4 font-weight-bold align-self-center">
           <i className="material-icons align-bottom">notifications</i>
         </a>
 
         <div
           onClick={() => setOpenMenu(!openMenu)}
-          className="navbar__username ml-4 font-weight-bold align-self-center d-flex cursor--pointer"
+          className="navbar__username m-3 ml-lg-4 font-weight-bold align-self-center d-flex cursor--pointer"
         >
           {profileImage ? (
             <img
