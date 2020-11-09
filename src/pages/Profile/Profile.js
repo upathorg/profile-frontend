@@ -28,7 +28,7 @@ export default function Profile({ roadmaps = initData }) {
   };
 
   return (
-    <DashboardWrapper className="position-relative row">
+    <DashboardWrapper className="position-relative row mx-0">
       <article className="col-12 col-lg-9">
         <header className="profile__content-header pt-4 px-4 pb-2">
           <h1>{editMode ? "Edit Profile" : "Profile"}</h1>

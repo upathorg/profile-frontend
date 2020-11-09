@@ -10,7 +10,7 @@
   height: $height-without-nav;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .dashboard__root {
     height: $height-without-nav-mobile;
   }

@@ -1,39 +1,74 @@
 import React from "react";
 // import { useSelector } from "react-redux";
 
-import logo from "../../assets/images/sharpStudy-logo-grayscale.png";
-import * as PATH from "../../pages/Routes/constants";
-import AuthenticatedLink from "./AuthenticatedLink";
-import NonAuthenticatedLink from "./NonAuthenticatedLink";
+import useOutsideClickDetector from "../../hooks/useOutsideClickDetector";
+import useWindowSize from "../../hooks/useWindowSize";
+import { HOME } from "../../pages/Routes/constants";
+import SharpStudyLogo from "../../svg/SharpStudyLogo";
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
 import "./styles.scss";
 
 const Navbar = () => {
-  // TODO: use redux after implement signup/login
+  // TODO: use redux and/or graphql after implement signup/login
   // const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
   // const user = useSelector((state) => state.auth?.user);
-  let isAuthenticated = false;
+
+  let isAuthenticated = true;
   let user = {
     username: "sharp study",
     profileImage: "",
   };
 
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = React.useState(false);
+  const mobileMenuRef = React.useRef(null);
+  const isClickedOutside = useOutsideClickDetector(mobileMenuRef);
+  const windowSize = useWindowSize();
+
+  React.useEffect(() => {
+    if (windowSize.width < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [windowSize]);
+
+  React.useEffect(() => {
+    if (openMobileMenu && isClickedOutside) {
+      setOpenMobileMenu(false);
+    }
+  }, [openMobileMenu, isClickedOutside]);
+
   return (
     <nav className="navbar__root fixed-top d-flex p-3">
-      <div className="mr-auto p-2">
-        <a href={PATH.HOME}>
-          <img src={logo} alt="SharpStudy" className="navbar__logo" />
+      <div className="mr-auto px-2 align-self-center">
+        <a href={HOME}>
+          <SharpStudyLogo className="navbar__logo" />
         </a>
       </div>
 
-      <div className="pr-4 align-self-center">
-        {isAuthenticated ? (
-          <AuthenticatedLink {...user} />
-        ) : (
-          <NonAuthenticatedLink />
-        )}
-      </div>
+      {!isMobile ? (
+        <DesktopMenu isAuthenticated={isAuthenticated} user={user} />
+      ) : (
+        <>
+          <i
+            className="material-icons mobile-menu__icon cursor--pointer text-white"
+            onClick={() => setOpenMobileMenu(!openMobileMenu)}
+          >
+            menu
+          </i>
 
-      <div className="navbar__divider" />
+          {openMobileMenu && (
+            <MobileMenu
+              ref={mobileMenuRef}
+              user={user}
+              isAuthenticated={isAuthenticated}
+              close={() => setOpenMobileMenu(false)}
+            />
+          )}
+        </>
+      )}
     </nav>
   );
 };

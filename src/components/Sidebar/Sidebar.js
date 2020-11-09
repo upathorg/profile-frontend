@@ -38,7 +38,7 @@ export default function SideBar() {
     <aside className="sidebar__root">
       <Nav
         isOpen={isOpen}
-        className="d-flex flex-md-column justify-content-around justify-content-md-start align-items-center align-items-md-start m-0 pt-2"
+        className="d-flex flex-lg-column justify-content-around justify-content-lg-start align-items-center align-items-lg-start m-0 pt-2"
       >
         <li className="m-3" onClick={() => setIsOpen(!isOpen)}>
           <i className="material-icons cursor--pointer">menu</i>

@@ -1,5 +1,6 @@
 import React from "react";
 
+import useOutsideClickDetector from "../../hooks/useOutsideClickDetector";
 import DownIcon from "../../svg/ChevronDown";
 
 export default function RoadmapMenu({
@@ -8,6 +9,14 @@ export default function RoadmapMenu({
   setCurrentRoadmap,
 }) {
   const [openDropdown, setOpenDropdown] = React.useState(false);
+  const dropdownRef = React.useRef(null);
+  const isClickedOutside = useOutsideClickDetector(dropdownRef);
+
+  React.useEffect(() => {
+    if (openDropdown && isClickedOutside) {
+      setOpenDropdown(false);
+    }
+  }, [openDropdown, isClickedOutside]);
 
   const handleClick = (roadmap) => {
     setCurrentRoadmap(roadmap);
@@ -25,7 +34,10 @@ export default function RoadmapMenu({
       </div>
 
       {openDropdown && (
-        <div className="dropdown__content border rounded bg-white p-3">
+        <div
+          ref={dropdownRef}
+          className="dropdown__content border rounded bg-white p-3"
+        >
           {roadmaps.map((roadmap, i) => (
             <div
               onClick={() => handleClick(roadmap)}

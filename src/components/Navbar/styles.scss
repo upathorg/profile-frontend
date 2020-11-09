@@ -1,25 +1,13 @@
 @import "../../styles/index.scss";
 
 .navbar__root {
+  background: #ffffff;
   height: $navbar-height;
+  border-bottom: solid 1.2px #dfe1e5;
 
   a {
     color: $active-text;
   }
-}
-
-.navbar__logo {
-  object-fit: contain;
-  width: 200px;
-}
-
-.navbar__divider {
-  position: fixed;
-  top: $navbar-height;
-  left: 0;
-  background: #dfe1e5;
-  width: 100vw;
-  height: 1.2px;
 }
 
 .navbar__user-image {
@@ -27,4 +15,116 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
+}
+
+#navbar__signup,
+#navbar__username {
+  color: $main-blue;
+}
+
+.search-bar__root {
+  border: 1px solid $main-blue;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 300px;
+
+  i {
+    color: $inactive-text;
+  }
+}
+
+.search-bar__input {
+  font-weight: 200;
+  outline: none;
+  background: inherit;
+  width: 100%;
+
+  &::placeholder {
+    color: $inactive-text;
+    font-weight: 300;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar__username {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navbar__down-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.account-menu__root {
+  position: fixed;
+  top: $navbar-height;
+  right: $navbar-height / 2;
+  min-width: 140px;
+  background: $lighter-grey;
+
+  li {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    line-height: 2.5rem;
+    font-size: 14px;
+    font-weight: bold;
+
+    &::after {
+      position: absolute;
+      left: 50%;
+      bottom: -2px;
+      transform: translateX(-50%);
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: $light-grey;
+    }
+
+    &:hover {
+      color: $main-blue;
+
+      a {
+        color: $main-blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.account-menu__logout {
+  color: $error-red;
+
+  &::after {
+    display: none;
+  }
+}
+
+.mobile-menu__root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $lighter-grey;
+}
+
+.mobile-menu__icon {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar__root {
+    background: $main-blue;
+  }
+
+  .navbar__logo {
+    fill: white;
+  }
 }
