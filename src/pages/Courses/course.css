@@ -1,0 +1,17 @@
+h5 {
+  font-weight: bold !important;
+  padding-bottom: 15px;
+  color: #000;
+}
+
+.class-deck {
+  padding-bottom: 30px;
+}
+
+.card-image {
+  height: "160px";
+}
+
+.card {
+  border: none;
+}

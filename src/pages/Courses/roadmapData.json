@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "text": "Frontend Developer",
+      "image": "https://fullscale.io/blog/wp-content/uploads/2020/06/front-end-tools.png"
+    },
+    {
+      "id": 2,
+      "text": "JS zero to master",
+      "image": "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2018/07/what-is-javascript.jpg"
+    },
+    {
+      "id": 3,
+      "text": "CSS Tutorial",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTJhHRH4bHHcHjk9FzDeF22aLq5NPJ5foOlQ&usqp=CAU"
+    },
+    {
+      "id": 4,
+      "text": "JS Ecmascript 2020",
+      "image": "https://miro.medium.com/max/5120/1*zWGvoz1xmYTp_RKkv-w1AQ.png"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ const Navbar = () => {
 
   let isAuthenticated = true;
   let user = {
-    username: "sharp study",
+    username: "Harrison",
     profileImage: "",
   };
 
