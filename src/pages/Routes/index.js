@@ -10,6 +10,8 @@ import Roadmap from "../Roadmap";
 import PrivateRoute from "./PrivateRoute";
 import * as PATH from "./constants";
 import "./index.scss";
+import Courses from "../Courses/course";
+import About from "../About/about";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -18,7 +20,6 @@ if (localStorage.token) {
 export default () => (
   <BrowserRouter>
     <Navbar />
-
     <div className="content__body overflow-auto vw-100">
       <Switch>
         <Route
@@ -33,6 +34,8 @@ export default () => (
         />
         <PrivateRoute exact path={PATH.ROADMAP} component={Roadmap} />
         <PrivateRoute exact path={PATH.PROFILE} component={Profile} />
+        <PrivateRoute exact path={PATH.COURSE} component={Courses} />
+        <PrivateRoute exact path={PATH.ABOUT} component={About} />
       </Switch>
     </div>
   </BrowserRouter>
