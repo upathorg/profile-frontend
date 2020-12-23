@@ -7,6 +7,7 @@ import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
 import Profile from "../Profile";
 import Roadmap from "../Roadmap";
+import Subjects from "../Subjects"
 import PrivateRoute from "./PrivateRoute";
 import * as PATH from "./constants";
 import "./index.scss";
@@ -36,6 +37,8 @@ export default () => (
         <PrivateRoute exact path={PATH.PROFILE} component={Profile} />
         <PrivateRoute exact path={PATH.COURSE} component={Courses} />
         <PrivateRoute exact path={PATH.ABOUT} component={About} />
+        <PrivateRoute exact path={PATH.SUBJECTS} component={Subjects} />
+
       </Switch>
     </div>
   </BrowserRouter>
