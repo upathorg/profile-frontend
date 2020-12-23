@@ -1,27 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
 
 import signUpImage from "../../assets/images/signUpDefaultImage.png";
 import FacebookButton from "../../components/SharedButtons/FacebookButton";
 import GoogleButton from "../../components/SharedButtons/GoogleButton";
 import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
 import { register, clearErrors } from "../../redux/actions/authAction";
-
-const styles = {
-  formControl: {
-    borderColor: "#0099FF",
-    borderRadius: "8px",
-  },
-  formCheck: {
-    borderColor: "#0099FF",
-    font: "Mulish",
-    fontStyle: "normal",
-    fontWeight: "300",
-    fontSize: "16px",
-    lineHeight: "24px",
-  },
-};
 
 const SignUp = ({ register, error, clearErrors, isAuthenticated, history }) => {
   const [user, setUser] = useState({
@@ -60,104 +44,90 @@ const SignUp = ({ register, error, clearErrors, isAuthenticated, history }) => {
   }, [error, isAuthenticated, history]);
 
   return (
-    <Container fluid>
-      <Row className="page-wrapper">
-        <Col className="image-container" xs={5}>
-          <img className="login-image" src={signUpImage} alt="Login Main" />
-        </Col>
-        <Col className="form-container">
-          <div>
-            <p className="signup-paragraph">
-              Already a member? <a href="/login">Sign in</a>
-            </p>
-          </div>
-          <div className="form-container-box">
-            <Row>
-              <Col>
-                <h1 className="title-text">Sign up to Sharp Study</h1>
-                <p className="subTitle-text">With your social network</p>
-              </Col>
-            </Row>
-            <Row className="logo-btn-wrapper">
-              <LinkedInButton buttonText="LinkedIn" />
-              <GoogleButton buttonText="Google" />
-              <FacebookButton buttonText="Facebook" />
-            </Row>
-            <div className="section-border">
-              <div className="section-border-line"></div>
-              <div className="section-border-text">OR</div>
-              <div className="section-border-line"></div>
+    <div className="split-screen">
+      <div className="left">
+        <section className="copy">
+          <img src={signUpImage} alt="Login Main" />
+        </section>
+      </div>
+      <div className="right">
+        <form onSubmit={onSubmit}>
+          <section className="copy">
+            <h2>Sign Up</h2>
+            <div className="login-container">
+              <p>
+                Already have an account?
+                <a href="/">
+                  {" "}
+                  <strong>Sign In</strong>
+                </a>
+              </p>
             </div>
-            <Form onSubmit={onSubmit}>
-              <Form.Group>
-                <InputGroup>
-                  <Form.Control
-                    size="lg"
-                    style={styles.formControl}
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    value={username}
-                    onChange={onChange}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please choose a username.
-                  </Form.Control.Feedback>
-                </InputGroup>
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  size="lg"
-                  style={styles.formControl}
-                  type="email"
-                  name="email"
-                  placeholder="E-mail"
-                  value={email}
-                  onChange={onChange}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  size="lg"
-                  style={styles.formControl}
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={onChange}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  size="lg"
-                  style={styles.formControl}
-                  type="password"
-                  name="password2"
-                  placeholder="Confirm Password"
-                  value={password2}
-                  onChange={onChange}
-                />
-                <Form.Text className="form-forgot-password"></Form.Text>
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  style={styles.formCheck}
-                  label="Agree to terms and conditions"
-                  feedback="You must agree before submitting."
-                />
-              </Form.Group>
-              <Form.Group>
-                <div className="submit-btn-wrapper">
-                  <button className="custom-submit-btn" type="submit">
-                    CREATE ACCOUNT
-                  </button>
-                </div>
-              </Form.Group>
-            </Form>
+            <LinkedInButton buttonText="LinkedIn" />
+            <GoogleButton buttonText="Google" />
+            <FacebookButton buttonText="Facebook" />
+          </section>
+          <div className="input-container name">
+            <label htmlFor="fname">Username</label>
+            <input
+              id="fname"
+              name="username"
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={onChange}
+            />
           </div>
-        </Col>
-      </Row>
-    </Container>
+          <div className="input-container email">
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="email@example.com"
+              value={email}
+              onChange={onChange}
+            />
+          </div>
+          <div className="input-container password">
+            <label htmlFor="password">password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={onChange}
+            />
+            <i className="fa fa-eye-slash" />
+          </div>
+          <div className="input-container password">
+            <label htmlFor="password">password</label>
+            <input
+              id="password"
+              name="password2"
+              type="password"
+              placeholder="confirm password"
+              value={password2}
+              onChange={onChange}
+            />
+            <i className="fa fa-eye-slash" />
+          </div>
+          <button className="signup-btn" type="submit">
+            SIGN IN
+          </button>
+          <section class="copy legal">
+            <p>
+              <span class="small">
+                By continuing, you agree to accept our <br />{" "}
+                <a href="#"> Privacy Policy</a> &amp;{" "}
+                <a href="#">Terms of Service</a>.
+              </span>
+            </p>
+          </section>
+        </form>
+      </div>
+    </div>
   );
 };
 
