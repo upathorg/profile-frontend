@@ -2,6 +2,7 @@ import React from "react";
 
 import { HOME, COURSE, ABOUT } from "../../pages/Routes/constants";
 import SharpStudyLogo from "../../svg/SharpStudyLogo";
+import Logo from '../../assets/images/sharpstudy.png'
 import AuthenticatedMobileLink from "./AuthenticatedMobileLink";
 import NonAuthenticatedLink from "./NonAuthenticatedLink";
 import SearchBar from "./SearchBar";
@@ -9,7 +10,8 @@ import SearchBar from "./SearchBar";
 const MobileMenu = React.forwardRef(({ isAuthenticated, user, close }, ref) => (
   <div ref={ref} className="mobile-menu__root d-flex flex-column vw-100 p-3">
     <a href={HOME} className="mb-4 py-2 ">
-      <SharpStudyLogo />
+    <img src={Logo} alt="sharpstudy_logo" />
+      {/* <SharpStudyLogo /> */}
     </a>
 
     <i

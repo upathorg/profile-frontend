@@ -65,7 +65,7 @@ a:hover {
 }
 
 .right form {
-  width: 328px;
+  width: 428px;
 }
 
 form input[type="text"],
@@ -182,8 +182,8 @@ checkmark:after {
   }
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 375px) {
   .right form {
-    width: 428px;
+    width: 328px !important;
   }
 }
