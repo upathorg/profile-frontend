@@ -5,9 +5,11 @@ import "./AuthButton.css";
 
 const LinkedInButton = (props) => {
   return (
-    <button className="btn linkedin">
-      <img src={LinkedInLogo} alt="LinkedIn Logo" />
-      <span>{props.buttonText}</span>
+    <button type="button" className="social-button">
+      <span className="__icon">
+        <img src={LinkedInLogo} alt="LinkedInLogo Logo" />
+      </span>
+      <span className="__text">{props.buttonText}</span>
     </button>
   );
 };

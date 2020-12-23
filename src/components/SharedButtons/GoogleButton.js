@@ -4,9 +4,11 @@ import GoogleLogo from "../../assets/images/GoogleLogo.png";
 
 const GoogleButton = (props) => {
   return (
-    <button className="btn google">
-      <img src={GoogleLogo} alt="Google Logo" />
-      <span>{props.buttonText}</span>
+    <button type="button" className="social-button">
+      <span className="__icon">
+        <img src={GoogleLogo} alt="Google Logo" />
+      </span>
+      <span className="__text">{props.buttonText}</span>
     </button>
   );
 };
