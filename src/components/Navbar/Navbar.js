@@ -5,6 +5,7 @@ import useOutsideClickDetector from "../../hooks/useOutsideClickDetector";
 import useWindowSize from "../../hooks/useWindowSize";
 import { HOME } from "../../pages/Routes/constants";
 import SharpStudyLogo from "../../svg/SharpStudyLogo";
+import Logo from '../../assets/images/sharpstudy.png'
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import "./styles.scss";
@@ -44,7 +45,8 @@ const Navbar = () => {
     <nav className="navbar__root fixed-top d-flex p-3">
       <div className="mr-auto px-2 align-self-center">
         <a href={HOME}>
-          <SharpStudyLogo className="navbar__logo" />
+          <img src={Logo} alt="sharpstudy_logo" />
+          {/* <SharpStudyLogo className="navbar__logo" /> */}
         </a>
       </div>
 
