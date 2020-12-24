@@ -2,6 +2,11 @@ import React from "react";
 
 import { PROFILE } from "../../pages/Routes/constants";
 
+const logout = () => {
+  localStorage.clear();
+  window.location.href = "/";
+};
+
 const AccountMenu = React.forwardRef((props, ref) => (
   <ul
     ref={ref}
@@ -14,7 +19,7 @@ const AccountMenu = React.forwardRef((props, ref) => (
 
     <li onClick={() => console.log("Change Appearances")}>Appearances</li>
 
-    <li className="account-menu__logout" onClick={() => console.log("Logout")}>
+    <li className="account-menu__logout" onClick={logout}>
       Logout
     </li>
   </ul>

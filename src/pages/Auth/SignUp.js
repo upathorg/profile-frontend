@@ -41,7 +41,7 @@ const SignUp = ({ register, error, clearErrors, isAuthenticated, history }) => {
       // to be implemented when backend errors handling are implemented
       clearErrors();
     }
-  }, [error, isAuthenticated, history]);
+  }, [error, isAuthenticated, history, clearErrors]);
 
   return (
     <div className="split-screen">
@@ -120,8 +120,8 @@ const SignUp = ({ register, error, clearErrors, isAuthenticated, history }) => {
             <p>
               <span class="small">
                 By continuing, you agree to accept our <br />{" "}
-                <a href="#"> Privacy Policy</a> &amp;{" "}
-                <a href="#">Terms of Service</a>.
+                <a href="#/"> Privacy Policy</a> &amp;{" "}
+                <a href="#/">Terms of Service</a>.
               </span>
             </p>
           </section>

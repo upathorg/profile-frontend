@@ -34,8 +34,8 @@ export default () => (
         />
         <PrivateRoute exact path={PATH.ROADMAP} component={Roadmap} />
         <PrivateRoute exact path={PATH.PROFILE} component={Profile} />
-        <PrivateRoute exact path={PATH.COURSE} component={Courses} />
-        <PrivateRoute exact path={PATH.ABOUT} component={About} />
+        <Route exact path={PATH.COURSE} component={Courses} />
+        <Route exact path={PATH.ABOUT} component={About} />
       </Switch>
     </div>
   </BrowserRouter>

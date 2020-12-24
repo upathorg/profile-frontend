@@ -5,7 +5,7 @@ import { PROFILE } from "../../pages/Routes/constants";
 export default function AuthenticatedMobileLink({ username }) {
   return (
     <>
-      <a href="" className="m-3 ml-lg-4 font-weight-bold">
+      <a href="#/" className="m-3 ml-lg-4 font-weight-bold">
         Notifications
       </a>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import * as PATH from "../../pages/Routes/constants";
@@ -29,8 +29,8 @@ export default function SideBar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   // TODO: use redux after implement signup/login
-  // const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
-  const isAuthenticated = true;
+  const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
+  //const isAuthenticated = true;
 
   if (!isAuthenticated) return null;
 
