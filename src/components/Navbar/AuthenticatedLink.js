@@ -18,7 +18,7 @@ export default function AuthenticatedLink({ username, profileImage }) {
   return (
     <>
       <div className="d-flex flex-column flex-lg-row">
-        <a href="" className="m-3 ml-lg-4 font-weight-bold align-self-center">
+        <a href="#/" className="m-3 ml-lg-4 font-weight-bold align-self-center">
           <i className="material-icons align-bottom">notifications</i>
         </a>
 

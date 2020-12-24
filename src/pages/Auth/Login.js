@@ -29,7 +29,7 @@ const Login = ({
   useEffect(() => {
     if (isAuthenticated) {
       localStorage.setItem("jwt", token);
-      history.push("/roadmap");
+      history.push("/profile");
     }
     if (token) {
       loadUser();
@@ -38,7 +38,7 @@ const Login = ({
     if (error === "Invalid Credentials") {
       clearErrors();
     }
-  }, [error, isAuthenticated, history]);
+  }, [error, isAuthenticated, history, clearErrors, loadUser, token]);
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
