@@ -83,7 +83,7 @@ Details of the tech stack that has been used.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the SovTech standard for commit messages and the accepted pull request process.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the standard for commit messages and the accepted pull request process.
 
 ## Versioning
 
