@@ -6,6 +6,7 @@ import FacebookButton from "../../components/SharedButtons/FacebookButton";
 import GoogleButton from "../../components/SharedButtons/GoogleButton";
 import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
 import { register, clearErrors } from "../../redux/actions/authAction";
+import "./auth.css";
 
 const SignUp = ({ register, error, clearErrors, isAuthenticated, history }) => {
   const [user, setUser] = useState({
