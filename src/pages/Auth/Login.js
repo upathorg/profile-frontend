@@ -5,7 +5,7 @@ import GoogleButton from "../../components/SharedButtons/GoogleButton";
 import LinkedInButton from "../../components/SharedButtons/LinkedInButton";
 import { connect } from "react-redux";
 import { login, clearErrors, loadUser } from "../../redux/actions/authAction";
-import "./Login.css";
+import "./auth.css";
 
 const Login = ({
   login,
