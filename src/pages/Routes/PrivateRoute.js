@@ -7,6 +7,7 @@ import { LOGIN } from "./constants";
 export default function PrivateRoute({ component: Component, ...rest }) {
   // TODO: use redux after implement signup/login
   const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
+  debugger;
   //const isAuthenticated = true;
 
   return (

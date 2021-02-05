@@ -20,16 +20,15 @@ const Login = ({
   const [user, setUser] = useState({
     email: "",
     password: "",
-    username: "",
   });
-  const { email, password, username } = user;
+  const { email, password } = user;
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   useEffect(() => {
     if (isAuthenticated) {
       localStorage.setItem("jwt", token);
-      history.push("/profile");
+      history.push("/roadmap");
     }
     if (token) {
       loadUser();
@@ -73,7 +72,7 @@ const Login = ({
             <GoogleButton buttonText="Google" />
             <FacebookButton buttonText="Facebook" />
           </section>
-          <div className="input-container name">
+          {/* <div className="input-container name">
             <label htmlFor="fname">Username</label>
             <input
               id="fname"
@@ -83,7 +82,7 @@ const Login = ({
               value={username}
               onChange={onChange}
             />
-          </div>
+          </div> */}
           <div className="input-container email">
             <label htmlFor="email">Email</label>
             <input
