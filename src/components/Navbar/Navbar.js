@@ -12,14 +12,16 @@ import "./styles.scss";
 
 const Navbar = () => {
   // TODO: use redux and/or graphql after implement signup/login
-  const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
+  //const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
+  const isAuthenticated = localStorage.getItem("jwt");
   const user = useSelector((state) => state.auth?.user);
 
   //FOR TESTING PURPOSES BEFORE API IS IMPLEMENTED
   //let isAuthenticated = true;
   // let user = {
   //   username: "TravisName",
-  //   profileImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkzYy_F9pvIhm6gdU4Fecyd7GUx-0yPSHZkA&usqp=CAU",
+  //   profileImage:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkzYy_F9pvIhm6gdU4Fecyd7GUx-0yPSHZkA&usqp=CAU",
   // };
 
   const [isMobile, setIsMobile] = React.useState(false);

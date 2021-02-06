@@ -37,11 +37,13 @@ const Login = ({
     if (error === "Invalid Credentials") {
       clearErrors();
     }
+
+    console.log(error);
   }, [error, isAuthenticated, history, clearErrors, loadUser, token]);
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
-      setAlert("Fields cannot be empty", "danger");
+      window.alert("Fields cannot be empty", "danger");
       clearErrors();
     } else {
       login({ email, password });

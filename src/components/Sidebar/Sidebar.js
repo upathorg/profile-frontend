@@ -29,7 +29,8 @@ export default function SideBar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   // TODO: use redux after implement signup/login
-  const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
+  //const isAuthenticated = useSelector((state) => state.auth?.isAuthenticated);
+  const isAuthenticated = localStorage.getItem("jwt");
   //const isAuthenticated = true;
 
   if (!isAuthenticated) return null;
