@@ -36,7 +36,7 @@ const SignUp = ({ register, error, clearErrors, isAuthenticated, history }) => {
   };
   useEffect(() => {
     if (isAuthenticated) {
-      history.push("/");
+      history.push("/login");
     }
     if (error) {
       // to be implemented when backend errors handling are implemented
