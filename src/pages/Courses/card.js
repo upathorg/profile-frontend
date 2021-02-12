@@ -4,23 +4,26 @@ import "./course.css";
 import data from "./roadmapData.json";
 
 const RoadmapCard = (props) => {
+
+
+
   return (
     <>
       <h5>{props.title}</h5>
       <hr />
       <CardDeck className="class-deck">
-        {data.results.map((data) => (
-          <Card key={data.id} className="card">
+        {props.data ? props.data.map((data) => (
+          <Card key={data.roadmapId} className="card">
             <Card.Img
               className="card-img"
               variant="top"
-              src={props.image ? props.image : data.image}
+              src={data.imageUrl}
             />
             <Card.Body>
-              <p>{data.text}</p>
+              <p>{data.name}</p>
             </Card.Body>
           </Card>
-        ))}
+        )) : null}
       </CardDeck>
     </>
   );

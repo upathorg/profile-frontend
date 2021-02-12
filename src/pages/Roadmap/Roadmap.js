@@ -6,9 +6,26 @@ import ProgressCard from "./ProgressCard";
 import ProgressCircle from "./ProgressCircle";
 import RoadmapMenu from "./RoadmapMenu";
 import "./styles.scss";
-
+import { gql } from '@apollo/client';
+import { client } from '../../utils/config';
 export default function Roadmap({ roadmaps = initData }) {
   const [currentRoadmap, setCurrentRoadmap] = React.useState(roadmaps[0]);
+
+  client.query({
+    query: gql`
+      query roadmaps {
+        roadmaps {
+          name
+          description
+          roadmapId
+        }
+      }
+    `
+  })
+    .then(result => {
+      console.log("$$$$$$$")
+      console.log(result)
+    });
 
   return (
     <DashboardWrapper>
